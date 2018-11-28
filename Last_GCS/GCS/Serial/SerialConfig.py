@@ -76,7 +76,8 @@ class SerialConfig:
             "status": "",
             "port": "",
             "baud": "",
-            "icon": ""
+            "icon": "",
+            "ip_address": ""
         }
         return drone_data
 

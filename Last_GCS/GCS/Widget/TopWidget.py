@@ -107,6 +107,8 @@ class TopWidget(BaseWidget):
     @pyqtSlot()
     def btn_connect_clicked(self):
 
+        ip_address = self.textbox.text()
+
         is_open = self.serial_manager.serial.isOpen()
         connect_flag = "open"
 
@@ -115,7 +117,7 @@ class TopWidget(BaseWidget):
 
         connect_data = (
             "serial",
-            (self.port_name.currentText(), int(self.baud_rate.currentText()), connect_flag)
+            (self.port_name.currentText(), int(self.baud_rate.currentText()), ip_address, connect_flag)
         )
 
         # 접속 정보 전달 >> SerialManager

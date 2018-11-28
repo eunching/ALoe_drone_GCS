@@ -107,7 +107,7 @@ class SerialManager(QObject):
             drone_data = SerialConfig.get_send_drone_data()
 
             # 시리얼 접속
-            port_name, baud_rate, connect_flag = value
+            port_name, baud_rate, ip_address, connect_flag = value
 
             try:
                 # 시리얼 접속 해제 인 경우
@@ -125,10 +125,11 @@ class SerialManager(QObject):
 
                 else:
                     # 시리얼 접속 인 경우
-                    if self.connect_serial(port_name, baud_rate):
+                    if self.connect_serial(port_name, baud_rate, ip_address):
 
                         drone_data['port'] = port_name
                         drone_data['baud'] = baud_rate
+                        drone_data['ip_address'] = ip_address
                         drone_data['icon'] = "ON"
 
                         # Drone Widget 패킷 전송
@@ -142,7 +143,7 @@ class SerialManager(QObject):
                         self.write_queue.put(write_data)
 
                         # client init and connect    rladmsrud
-                        self.client_manager = ClientManager("192.168.200.6", 9000)
+                        self.client_manager = ClientManager(ip_address, 9000)
 
 
             except Exception as error:
@@ -202,6 +203,7 @@ class SerialManager(QObject):
 
         elif flag == "ip_address":
             ip_address = value
+
             self.send_log_data.emit(ip_address)
 
         else:
@@ -257,8 +259,8 @@ class SerialManager(QObject):
                 gps_data["alt"] = read_data.alt
                 gps_data["lat"] = read_data.lat
                 gps_data["lng"] = read_data.lon
-                gps_data["hdop"] = read_data.eph
-                gps_data["vdop"] = read_data.epv
+                #gps_data["hdop"] = read_data.eph
+                #gps_data["vdop"] = read_data.epv
 
                 self.send_gps_data.emit(gps_data)
 
@@ -404,12 +406,13 @@ class SerialManager(QObject):
     # #########################################################################################
     #  시리얼 Config 설정 및 연결 처리
     # #########################################################################################
-    def connect_serial(self, port_name, baud_rate):
+    def connect_serial(self, port_name, baud_rate, ip_address):
 
         serial_info = SerialConfig.get_serial_info()
 
         serial_info["port_name"] = port_name
         serial_info["baud_rate"] = baud_rate
+        serial_info["ip_address"] = ip_address
         serial_info["data_bits"] = SerialConfig.DATABITS[3]
         serial_info["parity"] = SerialConfig.PARITY[0]
         serial_info["stop_bits"] = SerialConfig.STOPBITS[0]
@@ -438,10 +441,11 @@ class SerialManager(QObject):
     # #########################################################################################
     #  시리얼 접속 처리
     # #########################################################################################
-    def _open(self, port_name, baud_rate, data_bits, parity, stop_bits, timeout, write_timeout, xonxoff, rtscts, dsrdtr):
+    def _open(self, port_name, baud_rate, ip_address, data_bits, parity, stop_bits, timeout, write_timeout, xonxoff, rtscts, dsrdtr):
 
         self.serial.port = port_name
         self.serial.baudrate = baud_rate
+        self.serial.ip_address = ip_address
         self.serial.bytesize = data_bits
         self.serial.parity = parity
         self.serial.stopbits = stop_bits
