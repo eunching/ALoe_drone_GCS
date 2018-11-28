@@ -87,7 +87,7 @@ FONT_WHITE = "QLabel {color : white; border: none;}"
 TEXT_WHITE = "QTextEdit{ background-color : white; border: none;}"
 LABEL_BLACK = "QLabel {background-color : black; border: none;}"
 
-# #######################################################
+# ########################################################
 # 글씨 스타일
-# #######################################################
+# ########################################################
 FONT_STYLE = 'font-size : 12pt; font-family : HY그래픽M;'

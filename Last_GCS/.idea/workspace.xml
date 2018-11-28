@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f754e97-b983-4837-bbd2-27b557c86f18" name="Default Changelist" comment="">
+    <list default="true" id="6f754e97-b983-4837-bbd2-27b557c86f18" name="Default Changelist" comment=" .">
+      <change beforePath="$PROJECT_DIR$/GCS/Module/LogModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Module/LogModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GCS/Serial/SerialConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Serial/SerialConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GCS/Serial/SerialManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Serial/SerialManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GCS/Util/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Util/Util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GCS/Widget/TopWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Widget/TopWidget.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,45 +72,54 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
-          <entry key="py" value="14" />
+          <entry key="py" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="Python" value="14" />
+          <entry key="Python" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="286" />
-          <entry key="txt" value="30" />
+          <entry key="py" value="295" />
+          <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="30" />
-          <entry key="Python" value="286" />
+          <entry key="PLAIN_TEXT" value="32" />
+          <entry key="Python" value="295" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCS/Util/Util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="91" column="58" selection-start-line="91" selection-start-column="58" selection-end-line="91" selection-end-column="58" />
+            <state relative-caret-position="382">
+              <caret line="89" column="58" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialMessage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="102" column="6" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GCS/Module/LogModule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="34" column="68" lean-forward="true" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+            <state relative-caret-position="260">
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
               <folding>
                 <element signature="e#1#28#0" expanded="true" />
               </folding>
@@ -117,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="144" column="62" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
+            <state relative-caret-position="363">
+              <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -135,8 +148,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="117" column="24" lean-forward="true" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
+            <state relative-caret-position="154">
+              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GCS/Widget/StatusWidget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding>
+                <element signature="e#25#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialConfig.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="140" column="23" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="23" />
+            <state relative-caret-position="377">
+              <caret line="130" column="96" selection-start-line="130" selection-start-column="96" selection-end-line="130" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -220,22 +245,22 @@
         <option value="$PROJECT_DIR$/GCS/Module/GpsModule.py" />
         <option value="$PROJECT_DIR$/GCS/TCP/ClientManager.py" />
         <option value="$PROJECT_DIR$/GCS/Module/ControlModule.py" />
-        <option value="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" />
         <option value="$PROJECT_DIR$/GCS/Widget/BaseWidget.py" />
         <option value="$PROJECT_DIR$/GCS/Html/www/_examples_data/style.css" />
         <option value="$PROJECT_DIR$/GCS/Module/HudModule.py" />
         <option value="$PROJECT_DIR$/GCS/Module/CameraModule.py" />
         <option value="$PROJECT_DIR$/GCS/Widget/TopWidget.py" />
-        <option value="$PROJECT_DIR$/GCS/Module/LogModule.py" />
-        <option value="$PROJECT_DIR$/GCS/Serial/SerialManager.py" />
         <option value="$PROJECT_DIR$/GCS/Serial/SerialConfig.py" />
+        <option value="$PROJECT_DIR$/GCS/Serial/SerialManager.py" />
+        <option value="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" />
         <option value="$PROJECT_DIR$/GCS/Util/Util.py" />
+        <option value="$PROJECT_DIR$/GCS/Module/LogModule.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="878" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -462,10 +487,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="878" height="1057" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28333333" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2542735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -511,7 +536,7 @@
     <MESSAGE value="modify" />
     <MESSAGE value="set the ip address in log" />
     <MESSAGE value="connect ip adress to tcp protocal" />
-    <option name="LAST_COMMIT_MESSAGE" value="connect ip adress to tcp protocal" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/source code/ClientManager.py" />
@@ -580,13 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Widget/StatusWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -768,13 +786,6 @@
     <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialReadThread.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialMessage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2090">
-          <caret line="110" column="23" lean-forward="true" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GCS/KGCS.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -798,39 +809,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="117" column="24" lean-forward="true" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
+        <state relative-caret-position="154">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Module/LogModule.py">
+    <entry file="file://$PROJECT_DIR$/GCS/Widget/StatusWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="34" column="68" lean-forward="true" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+        <state relative-caret-position="299">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
-            <element signature="e#1#28#0" expanded="true" />
+            <element signature="e#25#52#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="144" column="62" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialConfig.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="130" column="96" selection-start-line="130" selection-start-column="96" selection-end-line="130" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialMessage.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
-          <caret line="140" column="23" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="23" />
+          <caret line="102" column="6" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Util/Util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="91" column="58" selection-start-line="91" selection-start-column="58" selection-end-line="91" selection-end-column="58" />
+        <state relative-caret-position="382">
+          <caret line="89" column="58" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCS/Module/LogModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <element signature="e#1#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

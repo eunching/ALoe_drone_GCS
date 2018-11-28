@@ -31,7 +31,7 @@ class LogModule(BaseWidget):
         # 로그 텍스트 에디터
         self.text_edit = CustomTextEdit(self.text_log_widget)
 
-        # 시리얼 Read(STATUSTEXT + COMMAND_ACK) 정보 스롯 연결
+        ## 시리얼 Read(STATUSTEXT + COMMAND_ACK) 정보 스롯 연결
         self.serial_manager.send_log_data.connect(self.get_log_data)
 
         # UI 초기화

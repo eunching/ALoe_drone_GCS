@@ -100,7 +100,7 @@ class SerialMessage:
 
     # FC의 모드는 Base_mode 로 상태를 확인한후
     #  custom_mode의 값으로 전환이 이루어진다.
-    # 위의 값은 Apm firmware 기반의 모드 전환에 관련된 값들을 정리해둔것이다.
+    ## 위의 값은 Apm firmware 기반의 모드 전환에 관련된 값들을 정리해둔것이다.
 
     def set_mode_buf(self, custom_mode):
         data = self.mav.set_mode_encode(1, 1, custom_mode)

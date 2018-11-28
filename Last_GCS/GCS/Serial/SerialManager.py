@@ -103,7 +103,7 @@ class SerialManager(QObject):
             SEND_DRONE_DATA{"controller":"N/A","status":"N/A","speed":"N/A","port":"N/A","baud":"N/A","icon":"N/A"}
 
             '''
-            # 전송 기본 패킷 불러온다.
+            ## 전송 기본 패킷 불러온다.
             drone_data = SerialConfig.get_send_drone_data()
 
             # 시리얼 접속

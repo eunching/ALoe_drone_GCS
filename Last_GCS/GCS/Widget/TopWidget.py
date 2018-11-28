@@ -103,7 +103,7 @@ class TopWidget(BaseWidget):
 
         return result
 
-    # 시리얼 connect 버튼 클릭 이벤트
+    ## 시리얼 connect 버튼 클릭 이벤트
     @pyqtSlot()
     def btn_connect_clicked(self):
 
