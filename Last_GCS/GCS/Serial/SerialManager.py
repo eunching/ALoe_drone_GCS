@@ -89,7 +89,6 @@ class SerialManager(QObject):
     #            3. way-point 클릭 시 ('way_point','read')
     # #########################################################################################
     def btn_clicked(self, data):
-        print("여기는 타나요? ")
         # 데이터 설정
         flag, value = data
 
@@ -205,6 +204,7 @@ class SerialManager(QObject):
             print("여기도 타나요? ")
             ip_address = value
             self.send_log_data.emit("ip address  : " + ip_address)
+            print("여기를 타나요? ")
 
         else:
             pass

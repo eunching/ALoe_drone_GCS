@@ -26,7 +26,6 @@ class CameraModule(BaseWidget):
         self.setStyleSheet(FONT_STYLE)
 
         self.flir_image = QLabel(self.widget)
-        #self.flir_image.resize(570, 300)
         self.flir_image.setStyleSheet(LABEL_BLACK)
         self.flir_image.setAlignment(Qt.AlignCenter)
 

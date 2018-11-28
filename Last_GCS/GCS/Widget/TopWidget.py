@@ -132,7 +132,6 @@ class TopWidget(BaseWidget):
 
     @pyqtSlot()
     def btn_text_clicked(self):
-        print("여기를 타나요? ")
 
         ip_address = self.textbox.copy()
 
@@ -142,5 +141,5 @@ class TopWidget(BaseWidget):
             "ip_address",
             (ip_address, int(self.baud_rate.currentText()), connect_flag)
         )
-        print("11111타나요? ")
+
         self.serial_manager.btn_clicked(click_data)

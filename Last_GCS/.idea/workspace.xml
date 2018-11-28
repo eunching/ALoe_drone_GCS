@@ -8,25 +8,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="4">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/GCS/Util/Util.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="303">
-                    <caret line="64" column="59" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="59" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-249476440">
       <usages-collector id="statistics.lifecycle.project">
@@ -74,87 +55,50 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-461933539">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Module/LogModule.py">
+        <entry file="file://$PROJECT_DIR$/GCS/KGCS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
-              <folding>
-                <element signature="e#1#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GCS/Module/CameraModule.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GCS/Module/HudModule.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-              <folding>
-                <element signature="e#25#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Html/www/hud.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="57" lean-forward="true" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2527">
-              <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Html/www/css/flightindicators.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Html/www/css/flightindicators.min.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialMessage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2090">
-              <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Html/www/_examples_data/prism/prism.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1064">
-              <caret line="56" column="23" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GCS/Html/www/_examples_data/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            <state relative-caret-position="1083">
+              <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -225,7 +169,6 @@
         <option value="$PROJECT_DIR$/GCS/Widget/StatusWidget.py" />
         <option value="$PROJECT_DIR$/GCS/Common/CustomComboBox.py" />
         <option value="$PROJECT_DIR$/GCS/Module/WaypointModule.py" />
-        <option value="$PROJECT_DIR$/GCS/Module/CameraModule.py" />
         <option value="$PROJECT_DIR$/GCS/Module/GpsModule.py" />
         <option value="$PROJECT_DIR$/GCS/TCP/ClientManager.py" />
         <option value="$PROJECT_DIR$/GCS/Module/ControlModule.py" />
@@ -237,13 +180,13 @@
         <option value="$PROJECT_DIR$/GCS/Widget/TopWidget.py" />
         <option value="$PROJECT_DIR$/GCS/Html/www/_examples_data/style.css" />
         <option value="$PROJECT_DIR$/GCS/Module/HudModule.py" />
+        <option value="$PROJECT_DIR$/GCS/Module/CameraModule.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="636" />
-    <option name="y" value="1" />
-    <option name="width" value="862" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -257,79 +200,23 @@
         <subPane>
           <expand>
             <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
+              <item name="Last_GCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Last_GCS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
+              <item name="Last_GCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Last_GCS" type="462c0819:PsiDirectoryNode" />
               <item name="GCS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Html" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Html" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="_examples_data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Html" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="_examples_data" type="462c0819:PsiDirectoryNode" />
-              <item name="prism" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Html" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
+              <item name="Last_GCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Last_GCS" type="462c0819:PsiDirectoryNode" />
               <item name="GCS" type="462c0819:PsiDirectoryNode" />
               <item name="Module" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Serial" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="TCP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
-              <item name="GCS" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LLLLLLLLLLLast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LLLLLLLLLLLast" type="462c0819:PsiDirectoryNode" />
+              <item name="Last_GCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Last_GCS" type="462c0819:PsiDirectoryNode" />
               <item name="GCS" type="462c0819:PsiDirectoryNode" />
               <item name="Widget" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -487,19 +374,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="636" y="1" width="862" height="1057" extended-state="0" />
+    <frame x="-7" y="0" width="1134" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27305827" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20529197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893162" weight="0.35140997" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893162" visible="true" weight="0.35140997" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.15184382" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.15184382" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50106835" side_tool="true" weight="0.2516269" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -545,7 +433,7 @@
     </entry>
     <entry file="file://D:/source code/ClientManager.py" />
     <entry file="file://D:/source code/SerialManager.py" />
-    <entry file="file://$USER_HOME$/Desktop/drone/setup.py">
+    <entry file="file://$PROJECT_DIR$/../../../drone/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
@@ -638,27 +526,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/drone/카메라/ImagesUrl.py">
+    <entry file="file://$PROJECT_DIR$/../../../drone/카메라/ImagesUrl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/drone/카메라/source code/SerialManager.py">
+    <entry file="file://$PROJECT_DIR$/../../../drone/카메라/source code/SerialManager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7336">
           <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../JBPRO/GCSenv/Lib/site-packages/serial/serialutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12084">
-          <caret line="637" column="8" selection-start-line="637" selection-start-column="8" selection-end-line="637" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../JBPRO/GCSenv/Lib/site-packages/serial/serialutil.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-677368271/PyQt5/QtCore/QObject.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -666,7 +548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/drone/code/rasperry_motor_protocal.py">
+    <entry file="file://$PROJECT_DIR$/../../../drone/code/rasperry_motor_protocal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
@@ -737,13 +619,6 @@
         <state relative-caret-position="-1083" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Module/CameraModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Widget/BottomWidget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -755,13 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/KGCS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
@@ -801,20 +669,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Html/www/hud.html">
+    <entry file="file://$PROJECT_DIR$/GCS/Util/Util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="57" lean-forward="true" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+        <state relative-caret-position="113">
+          <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCS/Module/HudModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
-            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#25#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
+    <entry file="file://$PROJECT_DIR$/GCS/Html/www/hud.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2527">
-          <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -826,14 +704,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Serial/SerialMessage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2090">
+        <state relative-caret-position="510">
           <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Html/www/_examples_data/prism/prism.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
+        <state relative-caret-position="506">
           <caret line="56" column="23" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
         </state>
       </provider>
@@ -845,20 +723,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Util/Util.py">
+    <entry file="file://$PROJECT_DIR$/GCS/KGCS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="64" column="59" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="59" />
+        <state relative-caret-position="228">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Module/HudModule.py">
+    <entry file="file://$PROJECT_DIR$/GCS/Module/CameraModule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-          <folding>
-            <element signature="e#25#49#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
         </state>
       </provider>
     </entry>
