@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <!-- Syntax coloration -->
+    <link rel="stylesheet" type="text/css" href="_examples_data/prism/prism.css" />
+    <!-- This page style -->
+    <link rel="stylesheet" type="text/css" href="_examples_data/style.css" />
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+
+    <script src="_examples_data/prism/prism.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.flightindicators.js"></script>
+
+</head>
+<body style="background-color#6c5b7b;margin:0">
+<div >
+    <div class="examples">
+        <div>
+            <span id="attitude"></span>
+            <span id="heading"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var attitude = $.flightIndicator('#attitude', 'attitude', {size:160, roll:0, pitch:0, showBox : false});
+    var heading = $.flightIndicator('#heading', 'heading', {size:160, heading:150, showBox:false});
+
+    function changeAlt(roll,pitch){
+        attitude.setRoll(roll);
+        attitude.setPitch(pitch);
+    }
+
+    function changeHead(head){
+        heading.setHeading(head);
+    }
+
+</script>
+
+</body>
+</html>

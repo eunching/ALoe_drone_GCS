@@ -1,0 +1,404 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Google Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <style>
+      html, body {
+
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #map {
+        height: 100%;
+      }
+    </style>
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCaOF6CBwv11EhPcAvFwCoyrXBokMytg34&callback=initMap"
+    async defer></script>
+    <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+    <script>
+
+    // map object
+    var map;
+
+    // 현재 드론 위치 마커
+    var drone;
+
+    // Home 위치 마커
+    var Home;
+    // 마커 display(레이어에 포함되는) 정보 수집
+    var markers = [];
+
+    // WayPoint 정보 수집
+    var wayPoints = [];
+
+    //클릭된 마커를 좌표 모음
+    var flightPlanCoordinates = [];
+
+    // google map window
+    var infoWindow;
+
+    // Way Point 설정 가능 여부(true:마커 클릭 가능, false: 마커 클릭 불가능)
+    var setYn = false;
+
+    //마커 상단 라벨 설정
+    var labels = '12345678910';
+
+    var labelIndex = 0;
+
+    // MapWidget > Web Channel 연결
+    var map_info;
+
+    // 마커 연결 하는 폴리 라인 수집
+    var flightLine;
+
+    /*
+      ############################################################
+        MapWidget WebChannel 연결
+      ############################################################
+    */
+    new QWebChannel(qt.webChannelTransport,
+         function(channel) {
+            map_info = channel.objects.map_info;
+         }
+    );
+
+    /*
+      ############################################################
+        맵 초기화 및 클릭 리스너 처리
+      ############################################################
+    */
+    function initMap() {
+
+
+        var myOptions = {
+            center: new google.maps.LatLng(35.8441821,127.12927769999999),
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            panControl: false,   // 위치 이동 가능여부 설정
+            zoomControl: true,  // 줌 설정 가능여부 설정
+            streetViewControl: false // 스트리트뷰 사용 가능여부 설정
+        };
+
+        map = new google.maps.Map(document.getElementById("map"),myOptions);
+
+        infoWindow = new google.maps.InfoWindow();
+
+        map.addListener('click', function(e) {
+
+            // WayPoint 설정(insert) 중인 경우만 클릭 가능하도록 처리 한다.
+            if(setYn){
+
+                if(wayPoints.length == 10){
+                   alert("10개까지만 등록가능합니다.");
+                   return false;
+                }
+
+                var tempGps = JSON.stringify(e.latLng);
+
+                var tempArry = tempGps.split(",");
+
+                for (i = 0; i < tempArry.length; i++){
+
+                    //위경도 자리수 마추기
+                    if(i == 0){
+                        tempArry[i] = tempArry[i].substr((tempArry[i].indexOf(":")+1),10);
+                    }else{
+                        if(0 == (i % 2)){
+                            tempArry[i] = tempArry[i].substr((tempArry[i].indexOf(":")+1),10);
+                        }else{
+                          if(tempArry[i].indexOf(".") == 3){
+
+                            tempArry[i] = tempArry[i].substr((tempArry[i].indexOf(":")+1),11);
+
+                          }else{
+
+                            tempArry[i] = tempArry[i].substr((tempArry[i].indexOf(":")+1),10);
+
+                          }
+                      }
+                    }
+                }
+
+                // MapWidget signal 호출(myDrone01,0,37.386403, 126.795233,5,0,w)
+                map_info.location_changed("myDrone01,"+(wayPoints.length+1)+","+tempArry[0]+","+tempArry[1]+",5,0,w");
+
+                // Way Point 정보 수집((myDrone01,0,37.386403, 126.795233,5,0,w)
+                wayPoints.push("myDrone01,"+(wayPoints.length+1)+","+tempArry[0]+","+tempArry[1]+",5,0,w");
+
+                // 마커 display
+                markerDisplay(wayPoints[wayPoints.length -1]);
+            }
+        });
+    }   // initMap end
+
+    /*
+      ############################################################
+        WayPoint 통해 마커를 생성한다.
+      ############################################################
+    */
+    function markerDisplay(wayPoint) {
+
+      if(wayPoint == null || wayPoint == undefined) return;
+
+      var oneMarker = wayPoint.split(",");
+
+      // 해당 위치 마커 생성 호출
+      createMarker(oneMarker,oneMarker[6],null);
+
+      //좌표 등록
+      flightPlanCoordinates.push(new google.maps.LatLng(oneMarker[2], oneMarker[3]));
+
+      // 라인 생성
+      drawLine();
+    }
+
+    function setHomeMarker(info){
+        info = info.split(",");
+
+
+        // marker 이미지 적용 (현재 미적용)
+        var markerHome =  {
+        url:"\images\home.png",
+        scale: 5
+        };
+
+        var oldHome = Home;
+        Home = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(info[0], info[1]),
+            label: "H "
+        });
+
+        //Home.setIcon(markerHome);
+
+        oldHome.setMap(null);
+        markers.push(Home);
+
+    }
+    function setDroneMarker(info) {
+
+        info = info.split(",");
+        var markerArrow =  {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+            scale: 5,
+            rotation: parseInt(info[5]),
+            origin : google.maps.Point(100,0)
+        };
+
+        var oldDrone = drone;
+
+        drone = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(info[2], info[3]),
+            title: info[1]+"",
+            droneId: info[0],
+            label: info[1]+""
+        });
+
+        // 드론 아이콘
+        drone.setIcon(markerArrow);
+
+        drone.content ='<div class="infoWindowContent">LAT : ' + info[2] + '</div>';
+        drone.content +='<div class="infoWindowContent">LNG : ' + info[3] + '</div>';
+
+
+        //마커 클릭 이벤트 리스너 추가
+        google.maps.event.addListener(drone, 'click', function(){
+
+            infoWindow.setContent('<h2>Current location: ' + marker.droneId + '</h2>' + drone.content);
+
+            // google map >> market display
+            infoWindow.open(map, drone);
+        });
+        oldDrone.setMap(null);
+        markers.push(drone);
+    }   // createMarker end
+
+
+
+
+    /*
+      ############################################################
+        info >> WayPoints[]
+        icon >> "d"(drone) "w"(way_point)  "h"(home)
+        rotate >> ?
+      ############################################################
+    */
+    function createMarker(info,icon,rotate) {
+        //첫번째 웨이포인트 읽어들일시 해당 웨이포인트 위치로 센터 이동
+        if(info[1] == "1") map.panTo(new google.maps.LatLng(info[2], info[3]));
+        var markerArrow =  {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+            scale: 5,
+            rotation: parseInt(info[5])
+        };
+
+
+        var markerHome =  {
+        url:"/images/home.png",
+        scale: 5
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(info[2], info[3]),
+            title: info[1]+"",
+            droneId: info[0],
+            label: info[1]+""
+        });
+
+        // 드론 아이콘
+        if(icon=="d") marker.setIcon(markerArrow);
+        // 홈 아이콘
+        if(icon=="h") marker.setIcon(markerHome);
+
+        marker.content ='<div class="infoWindowContent">LAT : ' + info[2] + '</div>';
+        marker.content +='<div class="infoWindowContent">LNG : ' + info[3] + '</div>';
+
+        if(icon=="w"){
+            marker.content +='<div class="infoWindowContent">ALT : ' + info[4] + '</div>';
+            marker.content +='<div class="infoWindowContent">HOLD : ' + info[5] + '</div>';
+        }
+
+        //마커 클릭 이벤트 리스너 추가
+        google.maps.event.addListener(marker, 'click', function(){
+
+            if(icon=="w")
+                infoWindow.setContent('<h2>Way Point : ' + marker.title + '</h2>' + marker.content);
+            else if(icon == "h")
+                infoWindow.setContent('<h2>Home Point: ' + marker.droneId + '</h2>' + marker.content);
+            else
+                infoWindow.setContent('<h2>Current location: ' + marker.droneId + '</h2>' + marker.content);
+
+            // google map >> market display
+            infoWindow.open(map, marker);
+        });
+
+        markers.push(marker);
+    }   // createMarker end
+
+    /*
+      ############################################################
+        WayPoint(좌표)가 존재 하는 경우 포인트별 라인을 그린다.
+      ############################################################
+    */
+    function drawLine(){
+
+      // 라인이 존재하면 모든 라인 삭제 처리
+      removeLines();
+
+      //좌표(flightPlanCoordinates) 를 기반으로 라인을 다시 그린다.
+      flightLine = new google.maps.Polyline({
+                   path: flightPlanCoordinates,
+                   geodesic: true,
+                   strokeColor: '#FF0000',
+                   strokeOpacity: 1.0,
+                   strokeWeight: 2
+      });
+
+      // 맵위에 라인 표시
+      flightLine.setMap(map);
+    }
+
+    /*
+      ############################################################
+        마커 연결 라인 삭제 처리
+      ############################################################
+    */
+    function removeLines(){
+       if(flightLine != null) flightLine.setMap(null);
+    }
+
+    /*
+      ##################################################################
+        Map Widget Singnl 이벤트(init:false / insert:true / save: false)
+      ##################################################################
+    */
+    function toggleSetYn(flag){
+      setYn = flag;
+    }
+
+    /*
+      ##################################################################
+       map 초기화(마커,라인,데이터)
+
+       flag > true : 모든 데이터 삭제 처리
+       flag > false : wayPoints 는 삭제 안함
+      ##################################################################
+    */
+    function mapReset(flag) {
+
+      removeLines();
+      flightPlanCoordinates = [];
+      for (var j = 0; j < markers.length; j++){
+            markers[j].setMap(null);
+      }
+      markers = [];
+
+      if(flag) wayPoints = [];
+
+    }
+
+    /*
+      ##################################################################
+       FC > Waypoint Read, WayPoint 삭제 및 저장 시 호출된다.
+      ##################################################################
+    */
+    function setWayPoint(wayPointArray){
+
+      // 맵초기화
+      mapReset(true);
+
+      //삭제 처리시 마지막 WayPoint 를 지우고 나면 0으로 들어으므로 바로 return 시킨다.
+      if(wayPointArray == "empty") return false;
+
+      // 입력 받은 WayPoints 재 설정
+      data = wayPointArray.split("/");
+
+      //data 마지막 값은 제외 시킨다.실제 값이 존재 하지 않음
+      wayPoints = data.splice(0,data.length - 1);
+
+      // 자동 그리기 호출
+      autoDrawing();
+    }
+
+    /*
+      ##################################################################
+        1. wayPoints 사이즈 증가 시(map clicked) 호출 된다.
+        2. MapWidget > HeartBeat 수신 후 호출 된다.
+        3. setWayPoint() 설정 후 호출된다.
+      ##################################################################
+    */
+    function autoDrawing(){
+
+        // WayPoint 설정중이 아닌 경우만 마커를 노출 시킨다.
+        if(!setYn){
+
+          // 맵초기화(좌표 및 wayPoints 는 삭제 안함)
+          mapReset(false);
+
+          if(wayPoints.length > 0){
+
+            for(var i = 0; i < wayPoints.length; i++){
+                markerDisplay(wayPoints[i]);
+            }
+          }
+        }
+    }
+
+    </script>
+  </head>
+
+  <body>
+    <div id="map"></div>
+  </body>
+
+</html>
