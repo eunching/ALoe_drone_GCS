@@ -32,9 +32,6 @@ class TopWidget(BaseWidget):
         # text 박스
         self.textbox = QLineEdit(self.widget)
 
-        # 버튼
-        self.btn_text = CustomButton(self.widget, 100, 35, "SAVE IP")
-
         # 접속 포트 콤보박스
         self.port_name = CustomComboBox(self.widget, 300, 35)
 
@@ -58,10 +55,9 @@ class TopWidget(BaseWidget):
         # 포트,보드레이트,접속 버튼 데이터(콤보박스) 설정
         self._fill_serial_info()
 
-        # 위젯 배치(로고,포트,보드레이트,접속버튼)
+        ## 위젯 배치(로고,포트,보드레이트,접속버튼)
         self.top_layout.addWidget(self.logo)
         self.top_layout.addWidget(self.textbox)
-        #self.top_layout.addWidget(self.btn_text)
         self.top_layout.addWidget(self.port_name)
         self.top_layout.addWidget(self.baud_rate)
         self.top_layout.addWidget(self.btn_connect)
@@ -132,14 +128,3 @@ class TopWidget(BaseWidget):
         # 새로운 시리얼 포트 및 보드레이트 추가
         self._fill_serial_info()
         self.textbox.clear()
-
-    @pyqtSlot()
-    def btn_text_clicked(self):
-
-        ip_address = self.textbox.text()
-
-        click_data = (
-            "ip_address", ip_address
-        )
-
-        self.serial_manager.btn_clicked(click_data)

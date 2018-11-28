@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f754e97-b983-4837-bbd2-27b557c86f18" name="Default Changelist" comment=" .">
-      <change beforePath="$PROJECT_DIR$/GCS/Module/LogModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Module/LogModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GCS/Serial/SerialConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Serial/SerialConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GCS/Serial/SerialManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Serial/SerialManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GCS/Util/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Util/Util.py" afterDir="false" />
+    <list default="true" id="6f754e97-b983-4837-bbd2-27b557c86f18" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/GCS/Widget/TopWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/GCS/Widget/TopWidget.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,14 +78,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="295" />
+          <entry key="py" value="297" />
           <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="32" />
-          <entry key="Python" value="295" />
+          <entry key="Python" value="297" />
         </counts>
       </usages-collector>
     </session>
@@ -115,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCS/Module/LogModule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+            <state relative-caret-position="279">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
               <folding>
                 <element signature="e#1#28#0" expanded="true" />
               </folding>
@@ -145,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+            <state relative-caret-position="185">
+              <caret line="110" column="18" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -249,12 +244,12 @@
         <option value="$PROJECT_DIR$/GCS/Html/www/_examples_data/style.css" />
         <option value="$PROJECT_DIR$/GCS/Module/HudModule.py" />
         <option value="$PROJECT_DIR$/GCS/Module/CameraModule.py" />
-        <option value="$PROJECT_DIR$/GCS/Widget/TopWidget.py" />
         <option value="$PROJECT_DIR$/GCS/Serial/SerialConfig.py" />
         <option value="$PROJECT_DIR$/GCS/Serial/SerialManager.py" />
         <option value="$PROJECT_DIR$/GCS/Serial/SerialMessage.py" />
         <option value="$PROJECT_DIR$/GCS/Util/Util.py" />
         <option value="$PROJECT_DIR$/GCS/Module/LogModule.py" />
+        <option value="$PROJECT_DIR$/GCS/Widget/TopWidget.py" />
       </list>
     </option>
   </component>
@@ -483,19 +478,40 @@
       <option name="project" value="LOCAL" />
       <updated>1543402852830</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary=" .">
+      <created>1543403094802</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1543403094802</updated>
+    </task>
+    <task id="LOCAL-00010" summary=" .">
+      <created>1543403149170</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543403149170</updated>
+    </task>
+    <task id="LOCAL-00011" summary=" .">
+      <created>1543403206013</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543403206013</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1057" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2542735" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12539515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893162" visible="true" weight="0.35140997" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893162" visible="true" weight="0.3480129" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -536,7 +552,8 @@
     <MESSAGE value="modify" />
     <MESSAGE value="set the ip address in log" />
     <MESSAGE value="connect ip adress to tcp protocal" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value=" ." />
+    <option name="LAST_COMMIT_MESSAGE" value=" ." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/source code/ClientManager.py" />
@@ -807,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Widget/StatusWidget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -854,11 +864,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GCS/Module/LogModule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        <state relative-caret-position="279">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
           <folding>
             <element signature="e#1#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCS/Widget/TopWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="110" column="18" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="18" />
         </state>
       </provider>
     </entry>
