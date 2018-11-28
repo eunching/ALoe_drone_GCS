@@ -61,7 +61,7 @@ class TopWidget(BaseWidget):
         # 위젯 배치(로고,포트,보드레이트,접속버튼)
         self.top_layout.addWidget(self.logo)
         self.top_layout.addWidget(self.textbox)
-        self.top_layout.addWidget(self.btn_text)
+        #self.top_layout.addWidget(self.btn_text)
         self.top_layout.addWidget(self.port_name)
         self.top_layout.addWidget(self.baud_rate)
         self.top_layout.addWidget(self.btn_connect)
