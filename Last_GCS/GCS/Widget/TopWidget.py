@@ -69,9 +69,6 @@ class TopWidget(BaseWidget):
         # refresh 클릭 이벤트 처리
         self.btn_refresh.clicked.connect(self.btn_refresh_clicked)
 
-        # save ip 클릭 이벤트 처리
-        self.btn_text.clicked.connect(self.btn_text_clicked)
-
     # 시리얼 상수 값들을 포트, 보드레이트에 값을 넣고 접속 버튼은 시그널 처리
     def _fill_serial_info(self):
 

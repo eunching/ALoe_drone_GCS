@@ -62,7 +62,7 @@ class LogModule(BaseWidget):
     @pyqtSlot(str)
     def get_log_data(self, message):
 
-        self.text_edit.append("set the IP address : " + message)
+        self.text_edit.append(message)
 
     # #########################################################################################
     #  시리얼 접속 해제로 인한 UI 초기화

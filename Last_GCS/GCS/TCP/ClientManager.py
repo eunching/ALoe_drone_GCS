@@ -22,6 +22,7 @@ class ClientManager(QObject):
         try:
             self.socket.connect((self.ip, self.port))
 
+
         except socket.error as e:
             print("tcp 연결 실패" + e)
 
