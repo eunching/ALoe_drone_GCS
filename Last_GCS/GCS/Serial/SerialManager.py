@@ -201,10 +201,8 @@ class SerialManager(QObject):
                 self.write_queue.put(self.mav_msg.mission_count_pack(count))
 
         elif flag == "ip_address":
-            print("여기도 타나요? ")
             ip_address = value
-            self.send_log_data.emit("ip address  : " + ip_address)
-            print("여기를 타나요? ")
+            self.send_log_data.emit(ip_address)
 
         else:
             pass

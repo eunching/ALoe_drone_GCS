@@ -129,17 +129,15 @@ class TopWidget(BaseWidget):
 
         # 새로운 시리얼 포트 및 보드레이트 추가
         self._fill_serial_info()
+        self.textbox.clear()
 
     @pyqtSlot()
     def btn_text_clicked(self):
 
-        ip_address = self.textbox.copy()
-
-        connect_flag = "open"
+        ip_address = self.textbox.text()
 
         click_data = (
-            "ip_address",
-            (ip_address, int(self.baud_rate.currentText()), connect_flag)
+            "ip_address", ip_address
         )
 
         self.serial_manager.btn_clicked(click_data)
