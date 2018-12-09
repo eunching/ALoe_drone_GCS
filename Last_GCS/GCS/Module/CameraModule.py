@@ -5,7 +5,7 @@ from GCS.Common.CustomLabel import *
 from GCS.Common.CustomTextEdit import *
 from PyQt5.QtCore import QThread, Qt, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import QLabel, QWidget, QApplication
+from PyQt5.QtWidgets import QLabel
 import cv2
 
 
