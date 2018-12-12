@@ -143,7 +143,7 @@ class SerialManager(QObject):
                         self.write_queue.put(write_data)
 
                         # client init and connect    rladmsrud
-                        self.client_manager = ClientManager("192.168.200.6", 9000)
+                        self.client_manager = ClientManager("192.168.200.5", 9000)
 
                         self.send_log_data.emit("set the IP address : " + ip_address)
 

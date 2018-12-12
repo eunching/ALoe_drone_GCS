@@ -79,8 +79,10 @@ class CaptureThread(QThread):
 
     def run(self):
 
-        url = "http://192.168.200.6:8080"
+        url = "http://192.168.200.5:8080"
         cap = cv2.VideoCapture(url)
+        count_plus = 1
+        path = './FLIR_image/'
 
         while True:
 
@@ -91,9 +93,13 @@ class CaptureThread(QThread):
                     rgb_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                     convert_to_format = QImage(rgb_image.data, rgb_image.shape[1], rgb_image.shape[0], QImage.Format_RGB888)
 
-
                     p = convert_to_format.scaled(570, 300, Qt.KeepAspectRatio)
                     self.set_change_image.emit(p)
+
+                    count = str(count_plus)
+                    filename = path + count + '.jpg'
+                    cv2.imwrite(filename, frame,  params=[cv2.IMWRITE_PNG_COMPRESSION, 0])
+                    count_plus += 1
 
             except Exception as exp:
                 print(exp)
