@@ -51,8 +51,6 @@ class SerialMessage:
         data = self.mav.mission_count_encode(self.systemId, self.compId, count)
         return data.pack(self.mav)
 
-    #def button_ip_address(self, ):
-
     def mission_item_int_pack(self, seq, frame, command, current, autocontinue, param1, param2, param3, param4,
                               x, y, z):
         data = self.mav.mission_item_int_encode(self.systemId, self.compId, seq, frame, command, current, autocontinue,
@@ -100,7 +98,7 @@ class SerialMessage:
 
     # FC의 모드는 Base_mode 로 상태를 확인한후
     #  custom_mode의 값으로 전환이 이루어진다.
-    ## 위의 값은 Apm firmware 기반의 모드 전환에 관련된 값들을 정리해둔것이다.
+    # 위의 값은 Apm firmware 기반의 모드 전환에 관련된 값들을 정리해둔것이다.
 
     def set_mode_buf(self, custom_mode):
         data = self.mav.set_mode_encode(1, 1, custom_mode)
@@ -113,9 +111,9 @@ class SerialMessage:
     def set_mode_stabilze(self):
         data = self.set_mode_buf(0)
         return data
-
+    #이쪽 괄호 안 숫자 4로 변
     def set_mode_guided(self):
-        data = self.set_mode_buf(2)
+        data = self.set_mode_buf(4)
         return data
 
     def set_mode_auto(self):
@@ -126,7 +124,6 @@ class SerialMessage:
         data = self.set_mode_buf(6)
         return data
 
-
     def set_mode_land(self):
         data = self.set_mode_buf(9)
         return data
@@ -134,7 +131,7 @@ class SerialMessage:
     #  COMMAND_LONG 분기
     ########################################################################################
     # Nav Take off (cmd : 22)
-    def cmd_nav_takeoff(self, height=10):
+    def cmd_nav_takeoff(self, height = 5):
         data = self.cmd_long_buf(22, param7=height)
         return data
 

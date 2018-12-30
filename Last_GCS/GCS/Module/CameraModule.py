@@ -5,7 +5,7 @@ from GCS.Common.CustomLabel import *
 from GCS.Common.CustomTextEdit import *
 from PyQt5.QtCore import QThread, Qt, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QLabel, QWidget, QApplication
 import cv2
 
 
@@ -81,9 +81,8 @@ class CaptureThread(QThread):
 
         url = "http://192.168.200.5:8080"
         cap = cv2.VideoCapture(url)
-        count_plus = 1
+        count_image = 0
         path = './FLIR_image/'
-
         while True:
 
             try:
@@ -96,10 +95,10 @@ class CaptureThread(QThread):
                     p = convert_to_format.scaled(570, 300, Qt.KeepAspectRatio)
                     self.set_change_image.emit(p)
 
-                    count = str(count_plus)
+                    count = str(count_image)
                     filename = path + count + '.jpg'
-                    cv2.imwrite(filename, frame,  params=[cv2.IMWRITE_PNG_COMPRESSION, 0])
-                    count_plus += 1
+                    cv2.imwrite(filename , frame)
+                    count_image += 1
 
             except Exception as exp:
                 print(exp)

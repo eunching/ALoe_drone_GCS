@@ -17,14 +17,13 @@ class WaypointModule(BaseWidget):
     #   initialize
     # #########################################################################################
     def __init__(self):
-        super(WaypointModule, self).__init__(CONTROL_WIDTH, WAYPOINT_HEIGHT, BACKGROUNG_WIDGET_COLOR)
+        super(WaypointModule, self).__init__(CONTROL_WIDTH, WAYPOINT_HEIGHT, WAYPOINT_WIDGET_COLOR)
 
         # 상태 레이아웃(라벨, 버튼, 테이블)
         self.waypoint_layout = QVBoxLayout(self.widget)
 
         # 라벨(타이틀) 생성
         self.title = CustomLabel(self.widget, width=CONTROL_WIDTH, name="  ▶  DRONE FLIGHT WAY POINT", color="B")
-        self.setStyleSheet(FONT_STYLE)
 
         # way point 관련 버튼 모음 위젯
         self.waypoint_btn_widget = QWidget(self)

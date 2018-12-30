@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import sys
+
 from GCS.Util.Util import *
-from PyQt5.QtGui import QPixmap, QIcon
+from PyQt5.QtGui import QPixmap
 from GCS.Widget.BaseWidget import BaseWidget
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtSerialPort import QSerialPortInfo
-from PyQt5.QtWidgets import QLabel, QHBoxLayout, QLineEdit
+from PyQt5.QtWidgets import QLabel, QHBoxLayout
 from GCS.Common.CustomButton import CustomButton
-from GCS.Common.CustomImgButton import CustomImgButton
 from GCS.Common.CustomComboBox import CustomComboBox
 from GCS.Serial.SerialConfig import SerialConfig
 
@@ -21,16 +21,13 @@ class TopWidget(BaseWidget):
 
     def __init__(self):
 
-        super(TopWidget, self).__init__(WIN_WIDTH, LOGO_HEIGHT, BACKGROUNG_WIDGET_COLOR)
+        super(TopWidget, self).__init__(WIN_WIDTH, LOGO_HEIGHT, TOP_WIDGET_COLOR)
 
         # 위젯들(로고,포트,보드레이트,접속버튼) > 레이아웃
         self.top_layout = QHBoxLayout(self.widget)
 
         # 로고 위젯
         self.logo = QLabel(self.widget)
-
-        # text 박스
-        self.textbox = QLineEdit(self.widget)
 
         # 접속 포트 콤보박스
         self.port_name = CustomComboBox(self.widget, 300, 35)
@@ -55,9 +52,8 @@ class TopWidget(BaseWidget):
         # 포트,보드레이트,접속 버튼 데이터(콤보박스) 설정
         self._fill_serial_info()
 
-        ## 위젯 배치(로고,포트,보드레이트,접속버튼)
+        # 위젯 배치(로고,포트,보드레이트,접속버튼)
         self.top_layout.addWidget(self.logo)
-        self.top_layout.addWidget(self.textbox)
         self.top_layout.addWidget(self.port_name)
         self.top_layout.addWidget(self.baud_rate)
         self.top_layout.addWidget(self.btn_connect)
@@ -66,7 +62,7 @@ class TopWidget(BaseWidget):
         # Connect 클릭 이벤트 처리
         self.btn_connect.clicked.connect(self.btn_connect_clicked)
 
-        # refresh 클릭 이벤트 처리
+        # Connect 클릭 이벤트 처리
         self.btn_refresh.clicked.connect(self.btn_refresh_clicked)
 
     # 시리얼 상수 값들을 포트, 보드레이트에 값을 넣고 접속 버튼은 시그널 처리
@@ -96,11 +92,9 @@ class TopWidget(BaseWidget):
 
         return result
 
-    ## 시리얼 connect 버튼 클릭 이벤트
+    # 시리얼 connect 버튼 클릭 이벤트
     @pyqtSlot()
     def btn_connect_clicked(self):
-
-        ip_address = self.textbox.text()
 
         is_open = self.serial_manager.serial.isOpen()
         connect_flag = "open"
@@ -110,7 +104,7 @@ class TopWidget(BaseWidget):
 
         connect_data = (
             "serial",
-            (self.port_name.currentText(), int(self.baud_rate.currentText()), ip_address, connect_flag)
+            (self.port_name.currentText(), int(self.baud_rate.currentText()), connect_flag)
         )
 
         # 접속 정보 전달 >> SerialManager
@@ -122,6 +116,5 @@ class TopWidget(BaseWidget):
     @pyqtSlot()
     def btn_refresh_clicked(self):
 
-        # 새로운 시리얼 포트 및 보드레이트 추가
+        # 새로은 시리얼 포트 및 보드레이트 추가
         self._fill_serial_info()
-        self.textbox.clear()

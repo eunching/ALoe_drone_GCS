@@ -3,16 +3,15 @@ from GCS.Widget.BaseWidget import BaseWidget
 from PyQt5.QtWidgets import QWidget,QVBoxLayout
 from GCS.Util.Util import *
 from GCS.Module.ControlModule import ControlModule
-from GCS.Module.CameraModule import CameraModule
 from GCS.Module.WaypointModule import WaypointModule
-from GCS.Module.StatusModule import StatusModule
+from GCS.Module.CameraModule import CameraModule
 
 
 class ControlWidget(BaseWidget):
 
     def __init__(self):
 
-        super(ControlWidget, self).__init__(CONTROL_WIDTH, CONTENTS_HEIGHT, BACKGROUNG_WIDGET_COLOR)
+        super(ControlWidget, self).__init__(CONTROL_WIDTH, CONTENTS_HEIGHT, BACKGROUND_COLOR_1)
 
         # 위젯들(버튼컨트롤, 접속정보, Waypoint) > 레이아웃
         self.control_layout = QVBoxLayout(self.widget)
@@ -37,4 +36,3 @@ class ControlWidget(BaseWidget):
         self.control_layout.addWidget(self.control_module)
         self.control_layout.addWidget(self.way_point_module)
         self.control_layout.addWidget(self.camera_module)
-

@@ -7,7 +7,7 @@ from GCS.Serial.SerialReadThread import *
 from GCS.Serial.SerialWriteThread import *
 from GCS.Serial.SerialConfig import SerialConfig
 from GCS.Serial.SerialMessage import *
-from GCS.TCP.ClientManager import ClientManager
+
 
 class SerialManager(QObject):
 
@@ -89,6 +89,7 @@ class SerialManager(QObject):
     #            3. way-point 클릭 시 ('way_point','read')
     # #########################################################################################
     def btn_clicked(self, data):
+
         # 데이터 설정
         flag, value = data
 
@@ -103,11 +104,11 @@ class SerialManager(QObject):
             SEND_DRONE_DATA{"controller":"N/A","status":"N/A","speed":"N/A","port":"N/A","baud":"N/A","icon":"N/A"}
 
             '''
-            ## 전송 기본 패킷 불러온다.
+            # 전송 기본 패킷 불러온다.
             drone_data = SerialConfig.get_send_drone_data()
 
             # 시리얼 접속
-            port_name, baud_rate, ip_address, connect_flag = value
+            port_name, baud_rate, connect_flag = value
 
             try:
                 # 시리얼 접속 해제 인 경우
@@ -118,18 +119,14 @@ class SerialManager(QObject):
 
                     # 시리얼 접속 유무 전달(on : 위젯 활성화 , off : 위젯 초기화)
                     self.send_ui_init.emit("off")
-
-                    # client disconnect
-                    self.client_manager.disConnectClient()
                     return
 
                 else:
                     # 시리얼 접속 인 경우
-                    if self.connect_serial(port_name, baud_rate, ip_address):
+                    if self.connect_serial(port_name, baud_rate):
 
                         drone_data['port'] = port_name
                         drone_data['baud'] = baud_rate
-                        drone_data['ip_address'] = ip_address
                         drone_data['icon'] = "ON"
 
                         # Drone Widget 패킷 전송
@@ -141,11 +138,6 @@ class SerialManager(QObject):
                         # param 0:off, 1:on( 모든 메시지 수신 요청)
                         write_data = self.mav_msg.data_stream_auto_buf(1)
                         self.write_queue.put(write_data)
-
-                        # client init and connect    rladmsrud
-                        self.client_manager = ClientManager("192.168.200.5", 9000)
-
-                        self.send_log_data.emit("set the IP address : " + ip_address)
 
 
             except Exception as error:
@@ -179,8 +171,6 @@ class SerialManager(QObject):
 
             elif value == "dis_arming":
                 self.write_queue.put(self.mav_msg.button_arm_disarm(0))
-            elif value == "spray":
-                self.client_manager.send_tcp_data()
 
         elif flag == "way_point":
 
@@ -189,6 +179,7 @@ class SerialManager(QObject):
                 self.write_queue.put(self.mav_msg.mission_request_list_pack())
 
             else:
+
                 # WayPoint Mission
                 count = value[1]
                 waypoints = value[2].split("/")
@@ -203,11 +194,6 @@ class SerialManager(QObject):
                 # 초기 미션 카운트를 FC 로 전달한다.
                 self.write_queue.put(self.mav_msg.mission_count_pack(count))
 
-        elif flag == "ip_address":
-            ip_address = value
-
-            self.send_log_data.emit(ip_address)
-
         else:
             pass
 
@@ -216,7 +202,7 @@ class SerialManager(QObject):
     # #########################################################################################
     @pyqtSlot(list)
     def get_received_data(self, heartbeat):
-        print(heartbeat)
+
         for data in heartbeat:
 
             read_data = self.mav.decode((bytearray)(data))
@@ -261,8 +247,8 @@ class SerialManager(QObject):
                 gps_data["alt"] = read_data.alt
                 gps_data["lat"] = read_data.lat
                 gps_data["lng"] = read_data.lon
-                #gps_data["hdop"] = read_data.eph
-                #gps_data["vdop"] = read_data.epv
+                gps_data["hdop"] = read_data.eph
+                gps_data["vdop"] = read_data.epv
 
                 self.send_gps_data.emit(gps_data)
 
@@ -408,13 +394,12 @@ class SerialManager(QObject):
     # #########################################################################################
     #  시리얼 Config 설정 및 연결 처리
     # #########################################################################################
-    def connect_serial(self, port_name, baud_rate, ip_address):
+    def connect_serial(self, port_name, baud_rate):
 
         serial_info = SerialConfig.get_serial_info()
 
         serial_info["port_name"] = port_name
         serial_info["baud_rate"] = baud_rate
-        serial_info["ip_address"] = ip_address
         serial_info["data_bits"] = SerialConfig.DATABITS[3]
         serial_info["parity"] = SerialConfig.PARITY[0]
         serial_info["stop_bits"] = SerialConfig.STOPBITS[0]
@@ -443,11 +428,10 @@ class SerialManager(QObject):
     # #########################################################################################
     #  시리얼 접속 처리
     # #########################################################################################
-    def _open(self, port_name, baud_rate, ip_address, data_bits, parity, stop_bits, timeout, write_timeout, xonxoff, rtscts, dsrdtr):
+    def _open(self, port_name, baud_rate, data_bits, parity, stop_bits, timeout, write_timeout, xonxoff, rtscts, dsrdtr):
 
         self.serial.port = port_name
         self.serial.baudrate = baud_rate
-        self.serial.ip_address = ip_address
         self.serial.bytesize = data_bits
         self.serial.parity = parity
         self.serial.stopbits = stop_bits

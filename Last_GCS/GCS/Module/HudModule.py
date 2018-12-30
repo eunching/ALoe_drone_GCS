@@ -4,7 +4,7 @@ from PyQt5 import QtCore
 from GCS.Util.Util import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtWebChannel import *
-from PyQt5.QtCore import pyqtSlot, Qt
+from PyQt5.QtCore import pyqtSlot
 from GCS.Common.CustomLabel import *
 from PyQt5.QtWebEngineWidgets import *
 from GCS.Widget.BaseWidget import BaseWidget
@@ -17,14 +17,13 @@ class FlightModule(BaseWidget):
     # #########################################################################################
     def __init__(self):
 
-        super(FlightModule, self).__init__(TEXT_WIDTH, TEXT_HEIGHT, BACKGROUNG_WIDGET_COLOR)
+        super(FlightModule, self).__init__(TEXT_WIDTH, FLIGHT_HEIGHT, BACKGROUND_COLOR_2)
 
         # 허드 레이아웃
         self.flight_layout = QVBoxLayout(self.widget)
 
         # 라벨(타이틀) 생성
         self.title = CustomLabel(self.widget, width=TEXT_WIDTH, name="  ▶  HUD", color="G")
-        self.setStyleSheet(FONT_STYLE)
 
         # 웹 엔진
         self.hud_view = QWebEngineView(self)
@@ -51,7 +50,6 @@ class FlightModule(BaseWidget):
 
         # 레이아웃 옵션
         self.flight_layout.setSpacing(35)
-        #self.flight_layout.setAlignment(Qt.AlignCenter)
         self.flight_layout.setContentsMargins(0, 0, 0, 0)
 
         # HUD 웹 페이지 설정 및 호출
@@ -85,9 +83,9 @@ class FlightModule(BaseWidget):
     def get_ui_init(self, connect):
 
         if connect == "on":
-            self.hud_view.page().runJavaScript("changeHead(" + str(90) + ")")
-            self.hud_view.page().runJavaScript("changeAlt(" + str(60) + ","+str(80)+")")
             pass
+            # self.hud_view.page().runJavaScript("changeHead(" + str(90) + ")")
+            # self.hud_view.page().runJavaScript("changeAlt(" + str(60) + ","+str(80)+")")
 
         else:
             self.hud_view.page().runJavaScript("changeHead(" + str(0) + ")")

@@ -19,8 +19,7 @@ class LogModule(BaseWidget):
         self.text_layout = QVBoxLayout(self.widget)
 
         # 라벨(타이틀) 생성
-        self.title = CustomLabel(self.widget, width=TEXT_WIDTH, name="  ▶  TEXT LOG LIST", color="G")
-        self.setStyleSheet(FONT_STYLE)
+        self.title = CustomLabel(self.widget, width=TEXT_WIDTH, name="  ▶  LOG LIST", color="G")
 
         # 텍스트 로그 위젯
         self.text_log_widget = QWidget(self)
@@ -31,7 +30,7 @@ class LogModule(BaseWidget):
         # 로그 텍스트 에디터
         self.text_edit = CustomTextEdit(self.text_log_widget)
 
-        ## 시리얼 Read(STATUSTEXT + COMMAND_ACK) 정보 스롯 연결
+        # 시리얼 Read(STATUSTEXT + COMMAND_ACK) 정보 스롯 연결
         self.serial_manager.send_log_data.connect(self.get_log_data)
 
         # UI 초기화

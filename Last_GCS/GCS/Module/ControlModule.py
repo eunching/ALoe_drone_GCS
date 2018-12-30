@@ -15,14 +15,13 @@ class ControlModule(BaseWidget):
     # #########################################################################################
     def __init__(self):
 
-        super(ControlModule, self).__init__(CONTROL_WIDTH, CONTROL_HEIGHT, BACKGROUNG_WIDGET_COLOR)
+        super(ControlModule, self).__init__(CONTROL_WIDTH, CONTROL_HEIGHT, BACKGROUND_COLOR_1)
 
-        # 상태 레이아웃(라벨,버튼 위젯)get_log_data
+        # 상태 레이아웃(라벨,버튼 위젯)
         self.control_layout = QVBoxLayout(self.widget)
 
         # 라벨(타이틀) 생성
         self.title = CustomLabel(self.widget, width=CONTROL_WIDTH, name="  ▶  CONTROLLER", color="B")
-        self.setStyleSheet('font-size : 10pt; font-family : HY그래픽M;')
 
         # 컨트롤 위젯
         self.control_btn_widget = QWidget(self)
@@ -38,7 +37,6 @@ class ControlModule(BaseWidget):
         arming = IMG_PATH + "drone_btn_2.png"
         dis_arming = IMG_PATH + "drone_btn_3.png"
         spray = IMG_PATH + "drone_btn_9.png"
-        #buzzer = IMG_PATH + "drone_btn_10.png"
 
         # 컨트롤 버튼 생성
         self.btn_take_off = CustomImgButton(self.control_btn_widget, 171, 41, "Take Off", take_off)
@@ -48,7 +46,6 @@ class ControlModule(BaseWidget):
         self.btn_arming = CustomImgButton(self.control_btn_widget, 171, 41, "Arming", arming)
         self.btn_dis_arming = CustomImgButton(self.control_btn_widget, 171, 41, "  DisArming  ", dis_arming)
         self.btn_spray = CustomImgButton(self.control_btn_widget, 171, 41, "  Spray  ", spray)
-        #self.btn_buzzer = CustomImgButton(self.control_btn_widget, 171, 41, "  Buzzer  ", buzzer)
 
         self.init_widget()
 
@@ -68,7 +65,6 @@ class ControlModule(BaseWidget):
         self.control_btn_layout.addWidget(self.btn_arming, 2, 0)
         self.control_btn_layout.addWidget(self.btn_dis_arming, 2, 1)
         self.control_btn_layout.addWidget(self.btn_spray, 3, 0)
-        #self.control_btn_layout.addWidget(self.btn_buzzer, 3, 1)
 
         # 버튼 스롯 연결
         self.btn_clicked_bind()
@@ -93,7 +89,6 @@ class ControlModule(BaseWidget):
         self.btn_arming.clicked.connect(lambda: self.btn_clicked('arming'))
         self.btn_dis_arming.clicked.connect(lambda: self.btn_clicked('dis_arming'))
         self.btn_spray.clicked.connect(lambda: self.btn_clicked('spray'))
-        #self.btn_buzzer.clicked.connect(lambda: self.btn_clicked('buzzer'))
 
     # #########################################################################################
     #  버튼 클릭 후 스롯 처리
@@ -128,7 +123,6 @@ class ControlModule(BaseWidget):
         btn_arming = True
         btn_dis_arming = True
         btn_spray = True
-        btn_buzzer = True
 
         if value == "on":
             pass
@@ -141,7 +135,6 @@ class ControlModule(BaseWidget):
             btn_arming = False
             btn_dis_arming = False
             btn_spray = False
-            btn_buzzer = False
 
         elif value == "take_off":
             pass
@@ -156,7 +149,6 @@ class ControlModule(BaseWidget):
             btn_arming = False
             btn_dis_arming = False
             btn_spray = False
-            btn_buzzer = False
 
         elif value == "rtl":
             pass
@@ -166,8 +158,6 @@ class ControlModule(BaseWidget):
             pass
         elif value == "spray":
             pass
-        elif value == "buzzer":
-            pass
 
         self.btn_take_off.setEnabled(btn_take_off)
         self.btn_landing.setEnabled(btn_landing)
@@ -176,7 +166,6 @@ class ControlModule(BaseWidget):
         self.btn_arming.setEnabled(btn_arming)
         self.btn_dis_arming.setEnabled(btn_dis_arming)
         self.btn_spray.setEnabled(btn_spray)
-        #self.btn_buzzer.setEnabled(btn_buzzer)
 
     # #########################################################################################
     #  시리얼 접속 해제로 인한 UI 초기화

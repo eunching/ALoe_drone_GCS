@@ -14,13 +14,13 @@ class StatusModule(BaseWidget):
     #   initialize
     # #########################################################################################
     def __init__(self):
-        super(StatusModule, self).__init__(CONTROL_WIDTH, STATUS_TEXT_HEIGHT, None)
+        super(StatusModule, self).__init__(STATUS_WIDTH, STATUS_TEXT_HEIGHT, BACKGROUND_COLOR_1)
 
         # 상태 레이아웃(라벨, 상태로그)
         self.status_layout = QVBoxLayout(self.widget)
 
         # 라벨(타이틀) 생성
-        #self.title = CustomLabel(self.widget, width=CONTROL_WIDTH, name="  ▶  DRONE STATUS", color="G")
+        self.title = CustomLabel(self.widget, width=CONTROL_WIDTH, name="  ▶  DRONE STATUS", color="G")
 
         # 상태로그 위젯
         self.status_log_widget = QWidget(self)
@@ -80,7 +80,7 @@ class StatusModule(BaseWidget):
         self.status_log_layout.addWidget(self.current_mission_val, 4, 1)
 
         # 위젯(타이틀 라벨, 상태로그 위젯) > 레이아웃
-        #self.status_layout.addWidget(self.title)
+        self.status_layout.addWidget(self.title)
         self.status_layout.addWidget(self.status_log_widget)
         self.status_layout.setContentsMargins(0, 0, 0, 0)
 

@@ -24,9 +24,8 @@ class CustomLabel(QLabel):
 
         # Label style sheet
         if color == "B":
-            self.setStyleSheet("QLabel { background-color:rgb(192,108,132); color : white; border: none; }")
-            pass
+            self.setStyleSheet("QLabel { background-color:rgb(46, 88 ,127); color : white; border: none; }")
         else:
             # self.setStyleSheet("QLabel { background-color:rgb(89, 178, 186); color : white; border: none; }")
             # self.setStyleSheet("QLabel { background-color:rgb(130, 140, 100); color : white; border: none; }")
-            self.setStyleSheet("QLabel { background-color:rgb(53,92,125); color : white; border: none; }")
+            self.setStyleSheet("QLabel { background-color:rgb(74, 141, 204); color : white; border: none; }")

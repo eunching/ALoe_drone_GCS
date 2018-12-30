@@ -19,6 +19,6 @@ class CustomComboBox(QComboBox):
     # #########################################################################################
     def init_widget(self):
 
-        self.setStyleSheet("QComboBox {background-color:rgb(85, 94, 110); color : white; border: none;}")
+        self.setStyleSheet("QComboBox {background-color:rgb(46, 88 ,127); color : white; border: none;}")
         self.resize(self.width, self.height)
-        self.setFixedSize(self.width, self.height)
+        self.setFixedSize(self.width,self.height)

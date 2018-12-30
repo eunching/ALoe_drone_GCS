@@ -55,12 +55,13 @@ TEXT_WIDTH = 396
 # WIDGET - COLOR
 ########################################################
 
-TOP_WIDGET_COLOR = "background-color:rgb(89, 190, 186)"
-CONTROL_WIDGET_COLOR = "background-color:rgb(89, 190, 186)"
+TOP_WIDGET_COLOR = "background-color:rgb(74, 141, 204)"
+BACKGROUND_COLOR_1 = "background-color:rgb(74, 141, 204)"
+BACKGROUND_COLOR_2 = "background-color:rgb(46, 88, 127)"
 MAP_WIDGET_COLOR = "background-color:rgb(85, 194, 110)"
 STATUS_WIDGET_COLOR = "background-color:rgb(85, 94, 110)"
 GPS_WIDGET_COLOR = "background-color:rgb(85, 94, 110)"
-WAYPOINT_WIDGET_COLOR = "background-color:rgb(89, 190, 186)"
+WAYPOINT_WIDGET_COLOR = "background-color:rgb(74, 141, 204)"
 DRONE_WIDGET_COLOR = "background-color:rgb(89, 178, 186) "
 BACKGROUNG_WIDGET_COLOR = "background-color:rgb(108,91,123) "
 
@@ -87,7 +88,7 @@ FONT_WHITE = "QLabel {color : white; border: none;}"
 TEXT_WHITE = "QTextEdit{ background-color : white; border: none;}"
 LABEL_BLACK = "QLabel {background-color : black; border: none;}"
 
-# ########################################################
+# #######################################################
 # 글씨 스타일
-# ########################################################
+# #######################################################
 FONT_STYLE = 'font-size : 12pt; font-family : HY그래픽M;'

@@ -6,8 +6,7 @@ from GCS.Widget.MapWidget import MapWidget
 from GCS.Widget.BaseWidget import BaseWidget
 from GCS.Widget.StatusWidget import StatusWidget
 from GCS.Widget.ControlWidget import ControlWidget
-from GCS.Widget.RightWidget import RightWidget
-
+from GCS.Widget.MapPlusStatusWidget import MapPlusStatusWidget
 
 class ContentsWidget(BaseWidget):
 
@@ -22,7 +21,7 @@ class ContentsWidget(BaseWidget):
 
         # 위젯(컨트롤, 맵, 로그) 인스턴스 생성
         self.control_widget = ControlWidget()
-        self.right_widget = RightWidget()
+        self.map_plus_status = MapPlusStatusWidget()
 
         # UI 설정
         self.init_widget()
@@ -38,6 +37,4 @@ class ContentsWidget(BaseWidget):
 
         # 위젯 인스턴스 > 레이아웃
         self.contents_layout.addWidget(self.control_widget)
-        self.contents_layout.addWidget(self.right_widget)
-        #self.contents_layout.addWidget(self.map_widget)
-        #self.contents_layout.addWidget(self.status_widget)
+        self.contents_layout.addWidget(self.map_plus_status)
