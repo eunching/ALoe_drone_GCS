@@ -229,7 +229,7 @@ class SerialManager(QObject):
             # voltage_battery, current_battery, battery_remaining, drop_rate_comm, errors_comm,
             #  errors_count1, errors_count2, errors_count3, errors_count4
 
-            if read_data.name == "SYS_STATUS":
+            if read_data.name == "SYS_STATUS" :
 
                 status_data = SerialConfig.get_send_status_data()
                 status_data["battery_volt"] = read_data.voltage_battery
